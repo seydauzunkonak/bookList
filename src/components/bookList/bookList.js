@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { addBook } from "../../actions";
 import BookItem from "./bookItem";
 import "./bookList.css";
 // içinden bir değer import edilmek istenseydi { }  kullanılır
@@ -23,4 +22,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { addBook })(BookList);
+export default connect(mapStateToProps)(BookList);

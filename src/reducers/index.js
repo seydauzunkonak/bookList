@@ -20,10 +20,12 @@ const selectedBookReducer = (oldSelectedBook = {}, action) => {
   } else if (action.type === "DESELECT_BOOK") {
     // kitap seçimini kaldır
     return {};
+  } else if (action.type === "DELETE_BOOK") {
+    return oldSelectedBook.isbn === action.payload.isbn ? {} : oldSelectedBook;
   }
-
   return oldSelectedBook;
 };
+
 export default combineReducers({
   bookList: bookListReducer,
   selectedBook: selectedBookReducer,
